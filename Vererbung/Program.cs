@@ -100,6 +100,46 @@
                 Console.WriteLine($" aus dem Herkunftsland: {milchkaffee.GetHerkunftsland()}, der Bohnensorte: {milchkaffee.GetBohnensorte()}, dem koffeingehalt: {milchkaffee.GetKoffeingehalt()}");
                 break;
                 case 3:
+                LatteMacchiato latte = new();
+                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? ");
+                latte.SetKoffeingehalt(Convert.ToDouble(Console.ReadLine()));
+                Console.Write("aus welchem Land sollen die Bohnen kommen? ");
+                latte.SetHerkunftsland(Console.ReadLine());
+                Console.Write("Welche Bohnensorte soll ihr Espresso haben? ");
+                latte.SetBohnensorte(Console.ReadLine());
+                Console.Write("Mit Milchschaum? (true/false)");
+                latte.SetMilchschaum(Convert.ToBoolean(Console.ReadLine()));
+                Console.Write("Wie hoch soll der Milchanteil sein? ");
+                latte.SetMilchanteil(Convert.ToDouble(Console.ReadLine()));
+                if (latte.GetMilchschaum()) {
+                    Console.Write("Voilá, ihr Milchkaffee mit Milchschaum");
+                }
+                else {
+                    Console.Write("Voilá, ihr Milchkaffe ohne Milchschaum");
+                }
+                Console.WriteLine($" aus dem Herkunftsland: {latte.GetHerkunftsland()}, der Bohnensorte: {latte.GetBohnensorte()}, dem koffeingehalt: {latte.GetKoffeingehalt()} und Milchanteil von: {latte.GetMilchanteil()}");
+                break;
+                case 4:
+                Eiskaffee Eiskaffee = new();
+                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? ");
+                Eiskaffee.SetKoffeingehalt(Convert.ToDouble(Console.ReadLine()));
+                Console.Write("aus welchem Land sollen die Bohnen kommen? ");
+                Eiskaffee.SetHerkunftsland(Console.ReadLine());
+                Console.Write("Welche Bohnensorte soll ihr Espresso haben? ");
+                Eiskaffee.SetBohnensorte(Console.ReadLine());
+                Console.Write("Mit Sahne? (true/false)");
+                Eiskaffee.SetSahne(Convert.ToBoolean(Console.ReadLine()));
+                Console.Write("Wie hoch soll der Milchanteil sein? ");
+                Eiskaffee.SetAnzahlEiskugel(Convert.ToInt16(Console.ReadLine()));
+                if (Eiskaffee.GetSahne()) {
+                    Console.Write("Voilá, ihr Milchkaffee mit Milchschaum");
+                }
+                else {
+                    Console.Write("Voilá, ihr Milchkaffe ohne Milchschaum");
+                }
+                Console.WriteLine($" aus dem Herkunftsland: {Eiskaffee.GetHerkunftsland()}, der Bohnensorte: {Eiskaffee.GetBohnensorte()}, dem koffeingehalt: {Eiskaffee.GetKoffeingehalt()} und mit {Eiskaffee.GetAnzahlEiskugel()} Eiskugeln.");
+                break;
+                case 5:
                 break;
                 default:
                 Console.ForegroundColor = ConsoleColor.Red;
