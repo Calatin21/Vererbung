@@ -6,7 +6,7 @@
             bool anwesend = true;
             while (anwesend) {
                 Console.WriteLine("Welches Getränk wollen sie bestellen?");
-                Console.WriteLine("1) Tee\n2)Kaffee\n3)Bier\n4)Lokal verlassen");
+                Console.WriteLine("1) Tee\n2) Kaffee\n3) Bier\n4) Lokal verlassen");
                 int antwort = Convert.ToInt16(Console.ReadLine());
                 switch (antwort) {
                     case 1:
@@ -58,18 +58,18 @@
             Console.WriteLine($"Er ist genau {tee.GetZiehzeit()} Minuten gezogen.");
         }
         static void Kaffee() {
-            Console.WriteLine("Welchen Kaffee wollen Sie?: \n1) Espresso\n2) Milchkaffee\n3) latte Macchiato\n4) Eiskaffee\n5) zurück");
+            Console.WriteLine("Welchen Kaffee wollen Sie?: \n1) Espresso\n2) Milchkaffee\n3) Latte Macchiato\n4) Eiskaffee\n5) zurück");
             int antwort = Convert.ToInt16(Console.ReadLine());
             switch (antwort) {
                 case 1:
                 Espresso espresso = new();
-                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? ");
+                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? (Kommazahl)");
                 espresso.SetKoffeingehalt(Convert.ToDouble(Console.ReadLine()));
                 Console.Write("aus welchem Land sollen die Bohnen kommen? ");
                 espresso.SetHerkunftsland(Console.ReadLine());
                 Console.Write("Welche Bohnensorte soll ihr Espresso haben? ");
                 espresso.SetBohnensorte(Console.ReadLine());
-                Console.Write("Normal oder einen doppelten Espresso? (true/false)");
+                Console.Write("Doppelter Espresso? (true/false)");
                 espresso.SetDoppel(Convert.ToBoolean(Console.ReadLine()));
                 if (espresso.GetDoppel()) {
                     Console.Write("Voilá, ihr doppelter Espresso");
@@ -81,7 +81,7 @@
                 break;
                 case 2:
                 Milchkaffee milchkaffee = new();
-                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? ");
+                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? (Kommazahl)");
                 milchkaffee.SetKoffeingehalt(Convert.ToDouble(Console.ReadLine()));
                 Console.Write("aus welchem Land sollen die Bohnen kommen? ");
                 milchkaffee.SetHerkunftsland(Console.ReadLine());
@@ -89,7 +89,7 @@
                 milchkaffee.SetBohnensorte(Console.ReadLine());
                 Console.Write("Mit Milchschaum? (true/false)");
                 milchkaffee.SetMilchschaum(Convert.ToBoolean(Console.ReadLine()));
-                Console.Write("Wie hoch soll der Milchanteil sein? ");
+                Console.Write("Wie hoch soll der Milchanteil sein? (Kommazahl)");
                 milchkaffee.SetMilchanteil(Convert.ToDouble(Console.ReadLine()));
                 if (milchkaffee.GetMilchschaum()) {
                     Console.Write("Voilá, ihr Milchkaffee mit Milchschaum");
@@ -101,7 +101,7 @@
                 break;
                 case 3:
                 LatteMacchiato latte = new();
-                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? ");
+                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? (Kommazahl)");
                 latte.SetKoffeingehalt(Convert.ToDouble(Console.ReadLine()));
                 Console.Write("aus welchem Land sollen die Bohnen kommen? ");
                 latte.SetHerkunftsland(Console.ReadLine());
@@ -109,7 +109,7 @@
                 latte.SetBohnensorte(Console.ReadLine());
                 Console.Write("Mit Milchschaum? (true/false)");
                 latte.SetMilchschaum(Convert.ToBoolean(Console.ReadLine()));
-                Console.Write("Wie hoch soll der Milchanteil sein? ");
+                Console.Write("Wie hoch soll der Milchanteil sein? (Kommazahl)");
                 latte.SetMilchanteil(Convert.ToDouble(Console.ReadLine()));
                 if (latte.GetMilchschaum()) {
                     Console.Write("Voilá, ihr Milchkaffee mit Milchschaum");
@@ -121,7 +121,7 @@
                 break;
                 case 4:
                 Eiskaffee Eiskaffee = new();
-                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? ");
+                Console.Write("Welchen Koffeingehalt soll ihr Espresso haben? (Kommazahl)");
                 Eiskaffee.SetKoffeingehalt(Convert.ToDouble(Console.ReadLine()));
                 Console.Write("aus welchem Land sollen die Bohnen kommen? ");
                 Eiskaffee.SetHerkunftsland(Console.ReadLine());
@@ -159,9 +159,9 @@
                 bierm.SetHefesorte(Console.ReadLine());
                 Console.Write("Welche Hopfensorte soll ihr Malzbier haben? ");
                 bierm.SetHopfensorte(Console.ReadLine());
-                Console.Write("Welchen Stammwürzegehalt soll ihr Malzbier haben? ");
+                Console.Write("Welchen Stammwürzegehalt soll ihr Malzbier haben? (Ganzzahl)");
                 bierm.SetStammwuerzegehalt(Convert.ToInt16(Console.ReadLine()));
-                Console.Write("Wie hoch soll der Alkoholgehalt sein? ");
+                Console.Write("Wie hoch soll der Alkoholgehalt sein? (Kommazahl)" );
                 bierm.SetAlkoholgehalt(Convert.ToDouble(Console.ReadLine()));
                 Console.Write($"Voilá, ihr Malzbier mit der Hefesorte: {bierm.GetHefesorte()}, der Hopfensorte: {bierm.GetHopfensorte()}, dem Stammwürzegehalt: {bierm.GetStammwuerzegehalt()} und dem Alkoholgehalt: {bierm.GetAlkoholgehalt()}");
                 break;
@@ -171,9 +171,9 @@
                 bierw.SetHefesorte(Console.ReadLine());
                 Console.Write("Welche Hopfensorte soll ihr Malzbier haben? ");
                 bierw.SetHopfensorte(Console.ReadLine());
-                Console.Write("Welchen Stammwürzegehalt soll ihr Malzbier haben? ");
+                Console.Write("Welchen Stammwürzegehalt soll ihr Malzbier haben? (Kommazahl)");
                 bierw.SetWeizenmalzgehalt(Convert.ToDouble(Console.ReadLine()));
-                Console.Write("Wie hoch soll der Alkoholgehalt sein? ");
+                Console.Write("Wie hoch soll der Alkoholgehalt sein? (Kommazahl)");
                 bierw.SetAlkoholgehalt(Convert.ToDouble(Console.ReadLine()));
                 Console.Write($"Voilá, ihr Weizenbier mit der Hefesorte: {bierw.GetHefesorte()}, der Hopfensorte: {bierw.GetHopfensorte()}, dem Stammwürzegehalt: {bierw.GetWeizenmalzgehalt()} und dem Alkoholgehalt: {bierw.GetAlkoholgehalt()}");
                 break;
